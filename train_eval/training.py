@@ -102,7 +102,6 @@ def listwise_training_epoch(net, optimizer, train_data, full_data, node_features
 			# make destination as label 1
 			y[1] = 1.0
 
-			# loss.append(-torch.sum(F.softmax(y, dim=0) * F.log_softmax(sp, dim=0)))
 			loss.append(-torch.sum(y * F.log_softmax(sp, dim=0)))
 
 		loss = sum(loss) / len(loss)
